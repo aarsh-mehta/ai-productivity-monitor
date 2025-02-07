@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Productivity Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="start-view" class="view">
+    <h2>Start Productivity Session</h2>
+    <textarea id="task-description" placeholder="What are you working on? (e.g., 'Researching Cold War videos for history assignment')"></textarea>
+    <button id="start-session">Start My Productivity</button>
+  </div>
+  
+  <div id="active-view" class="view hidden">
+    <h2>Session Active</h2>
+    <p id="task-display"></p>
+    <div class="stats">
+      <div>Time active: <span id="active-time">0:00:00</span></div>
+      <div>Productive: <span id="productive-time">0:00:00</span></div>
+      <div>Unproductive: <span id="unproductive-time">0:00:00</span></div>
+    </div>
+    <div id="current-site">
+      <div>Current site: <span id="current-site-url">None</span></div>
+      <div>
+        <span class="classification-label">Classification:</span> 
+        <span id="current-site-status">Unknown</span>
+        <span id="analysis-indicator" class="hidden">
+          <span class="spinner"></span>
+        </span>
+      </div>
+      <div class="explanation">
+        <span class="explanation-label">Reason:</span>
+        <span id="classification-reason">Not yet analyzed</span>
+      </div>
+      <button id="toggle-classification">Override Classification</button>
+    </div>
+    <button id="end-session">End Session</button>
+  </div>
+  
+  <div id="results-view" class="view hidden">
+    <h2>Session Results</h2>
+    <div class="stats">
+      <div>Total time: <span id="total-time">0:00:00</span></div>
+      <div>Productive: <span id="final-productive-time">0:00:00</span> (<span id="productive-percent">0%</span>)</div>
+      <div>Unproductive: <span id="final-unproductive-time">0:00:00</span> (<span id="unproductive-percent">0%</span>)</div>
+    </div>
+    <h3>Sites Visited</h3>
+    <div id="sites-list"></div>
+    <button id="new-session">Start New Session</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

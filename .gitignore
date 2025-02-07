@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Node modules
+node_modules/
+
+# Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
